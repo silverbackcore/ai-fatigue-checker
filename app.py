@@ -395,13 +395,14 @@ def main() -> None:
     tab1, tab2, tab3 = st.tabs(["診断", "履歴", "概要"])
 
     with tab1:
+        if not st.session_state.get("submitted"):
+            st.info("質問に回答して、下部の「診断する」を押してください。")
+
         answers = render_questionnaire()
 
         if st.session_state.get("submitted"):
             result = calculate_scores(st.session_state.get("answers", answers))
             render_result(user_name, result)
-        else:
-            st.info("質問に回答して、下部の「診断する」を押してください。")
 
     with tab2:
         render_history()

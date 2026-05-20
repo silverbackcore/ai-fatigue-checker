@@ -40,6 +40,12 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
+## テスト
+
+```bash
+pytest
+```
+
 ## ファイル構成
 
 ```text
