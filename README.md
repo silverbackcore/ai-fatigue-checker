@@ -2,6 +2,12 @@
 
 生成AI利用による「確認疲れ」「判断疲れ」「情報過多」「依存不安」「身体疲労」を可視化するセルフチェックアプリです。
 
+## Demo
+
+公開アプリはこちらです。
+
+https://ai-fatigue-checker-silverbackcore.streamlit.app/
+
 ## 概要
 
 ChatGPT、Claude、Gemini、Copilotなどの生成AIは業務効率を高めますが、使い方によっては以下のような負荷が増えることがあります。
