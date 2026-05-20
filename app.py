@@ -218,6 +218,19 @@ def render_result(user_name: str, result: Dict) -> None:
         unsafe_allow_html=True,
     )
 
+    st.markdown("### 主なタイプ")
+    for category_key, category_score in result["top_types"]:
+        detail = get_type_detail(category_key)
+        st.markdown(f"#### {detail['name']}：{category_score}点")
+        st.write(detail["summary"])
+        for action in detail["actions"]:
+            st.write(f"- {action}")
+
+    st.markdown("### あなた向けAI利用ルール")
+    rules = make_ai_usage_rules(result["category_scores"])
+    for i, rule in enumerate(rules, start=1):
+        st.write(f"{i}. {rule}")
+
     category_df = pd.DataFrame(
         {
             "カテゴリ": [CATEGORIES[key] for key in result["category_scores"].keys()],
@@ -226,6 +239,7 @@ def render_result(user_name: str, result: Dict) -> None:
         }
     )
 
+    st.markdown("### カテゴリ別の傾向")
     chart_col1, chart_col2 = st.columns([1.2, 1])
     with chart_col1:
         fig = px.bar(
@@ -254,20 +268,7 @@ def render_result(user_name: str, result: Dict) -> None:
         fig.update_traces(fill="toself")
         st.plotly_chart(fig, use_container_width=True)
 
-    st.markdown("### 主なタイプ")
-    for category_key, category_score in result["top_types"]:
-        detail = get_type_detail(category_key)
-        st.markdown(f"#### {detail['name']}：{category_score}点")
-        st.write(detail["summary"])
-        for action in detail["actions"]:
-            st.write(f"- {action}")
-
-    st.markdown("### あなた向けAI利用ルール")
-    rules = make_ai_usage_rules(result["category_scores"])
-    for i, rule in enumerate(rules, start=1):
-        st.write(f"{i}. {rule}")
-
-    st.markdown("### まず試す改善アクション")
+    st.markdown("### 補足の改善アクション")
     for action in GENERAL_RECOMMENDATIONS:
         st.write(f"- {action}")
 
