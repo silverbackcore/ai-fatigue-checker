@@ -4,4 +4,5 @@ __pycache__/
 .venv/
 venv/
 data/history.csv
-.streamlit/
+.streamlit/*
+!.streamlit/config.toml
