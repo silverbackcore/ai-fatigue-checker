@@ -6,7 +6,7 @@
 
 公開アプリはこちらです。
 
-https://ai-fatigue-checker-silverbackcore.streamlit.app/
+https://ai-fatigue-checker-sbc.streamlit.app/
 
 ## 概要
 
