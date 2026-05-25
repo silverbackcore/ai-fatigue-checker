@@ -8,6 +8,16 @@
 
 https://ai-fatigue-checker-sbc.streamlit.app/
 
+## 画面イメージ
+
+### 質問画面
+
+![質問画面](docs/images/questionnaire.png)
+
+### 結果画面
+
+![結果画面](docs/images/result.png)
+
 ## 概要
 
 ChatGPT、Claude、Gemini、Copilotなどの生成AIは業務効率を高めますが、使い方によっては以下のような負荷が増えることがあります。
