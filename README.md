@@ -70,6 +70,23 @@ ai_fatigue_checker/
    └─ history.csv  # 初回起動時に自動作成
 ```
 
+## Current Limitations
+
+- 履歴保存はローカルCSVを利用しています。
+- Streamlit Community Cloud上では、ローカルファイルの永続保存を前提としていません。
+- 本格運用では Supabase / Google Sheets / PostgreSQL などの外部ストレージ連携が必要です。
+
+## Roadmap
+
+- スマホ表示の最適化
+- 診断結果コメントの改善
+- Googleフォームなどによるフィードバック収集
+- Supabase連携による履歴永続化
+- チーム診断版の設計
+- PDFレポート出力
+
+詳細な改善予定は [docs/roadmap.md](docs/roadmap.md) を参照してください。
+
 ## 注意事項
 
 このアプリは医療診断ではありません。  
